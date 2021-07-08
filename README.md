@@ -11,18 +11,41 @@ Wet-lab subpart: in vitro demonstration backing the validation of the model.
 
 
 ### Resources Required
--training set: 3cl protease?
--testing set: 
+- training set: 3cl protease?
 
--possible target molecule synthesized
--3clp expressed: an in vitro assay system to be created
+- testing set: 
+
+- possible target molecule synthesized
+
+- 3clp expressed: an in vitro assay system to be created
 
 
 ### Tools/Skills Required
--model 
+- might involve web scrapping
 
+- wet lab designs
 
+- tensorflow(setting weight)
+
+- rdkit
 
 ### Risks(hinderance)
+- not being able to construct the model for setting weight of each molecules: simplify it
+- not being able to select out any potential new inhibitors from screened drug banks: pay especially attention on the target protein in background research phase, are there any reported inhibitor? Find other possible targets, such as DDR1, for testing.
 
 ### Tentative Timeline
+
+- [ ] 1. Conduct pre-research on existing model & protein targets. Sum their advantages and possible points for improvements
+- [ ] 2. Obtain training dataset of screening assays
+- [ ] 3. Improve the discriminator model: weights, stereochemistry, etc
+- [ ] 4. Obtain screening dataset
+- [ ] 5. Apply the screening set to the discriminator
+- [ ] 6. User-friendlirize the model(make it into importable packages)
+- [ ] 7. Create a wet lab assay system 
+- [ ] 8. Assert the efficiency of the model with selected molecule and the assay system
+
+>Timeline
+
+| week1(~7.17) | week2(7.24) | week3(7.31) | week4(8.7) | week5(8.14) | week6(8.21) | week7(8.28) | week8(9.4) |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 1 & 2 & 3 | 2 & 3 | 3 & 4 | 5 & 6 & 7 | 7 | 7 & 8 |  |  |
