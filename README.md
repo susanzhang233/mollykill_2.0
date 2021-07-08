@@ -46,6 +46,12 @@ Wet-lab subpart: in vitro demonstration backing the validation of the model.
 
 >Timeline
 
-| week1(~7.17) | week2(7.24) | week3(7.31) | week4(8.7) | week5(8.14) | week6(8.21) | week7(8.28) | week8(9.4) |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| 1 & 2 & 3 | 2 & 3 | 3 & 4 | 5 & 6 & 7 | 7 | 7 & 8 |  |  |
+| week1(~7.17) | week2(7.24) | week3(7.31) | week4(8.7) |
+| ---- | ---- | ---- | ---- |
+| 1 & 2 & 3 | 2 & 3 | 3 & 4 | 5 & 6 & 7 |
+
+| week5(8.14) | week6(8.21) | week7(8.28) | week8(9.4) |
+| ---- | ---- | ---- | ---- |
+| 7 | 7 & 8 |  |  |
+
+
