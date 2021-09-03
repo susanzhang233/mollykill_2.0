@@ -12,7 +12,33 @@ from tensorflow import keras
 from tensorflow.keras import layers
 import matplotlib.pyplot as plt
 import numpy as np
+
+import deepchem as dc 
+
 #from rdkit import Chem
+
+
+#############################################################################
+"""## Featurizer """
+
+def featurize(column):
+    '''
+    parameter:
+    ------------
+    column: training molecules of smiles format
+    
+    Return:
+    ------------
+    train_nodes: featurized nodes
+    train_edges: featurized edges
+    '''
+    featurizer = dc.feat.MolGraphConvFeaturizer(use_edges=True)
+    feats = featurizer.featurize(column)
+    
+    train_nodes = [ i.node_features.sum(axis = 0) for i in feats ]
+    train_edges = [ e.edge_features.sum(axis = 0) for e in feats ]
+    
+    return train_nodes, train_edges
 
 
 
@@ -37,17 +63,15 @@ def prepare_data(input_df, minimum_length ):
     #get the length and exclude those shorter than minimum length
     input_df['length'] = input_df['smiles'].apply(lambda x :Chem.MolFromSmiles(x).GetNumAtoms())
     df = input_df[input_df['length'] > minimum_length]
+    
     y = df['activity']
    
     #featurize
-    featurizer = dc.feat.MolGraphConvFeaturizer(use_edges=True)
-    feats = featurizer.featurize(df['smiles'])
     
-    train_nodes = [ i.node_features.sum(axis = 0) for i in feats ]
-    train_edges = [ e.edge_features.sum(axis = 0) for e in feats ]
+    #out = featurizer.featurize(smiles)
     
-    return train_nodes, train_edges, y
     
+    return df, y
 
 ##########################################################################
 """---------------------
@@ -97,4 +121,42 @@ def make_model():
 
 
 ##########################################################################
+
+"""---------------------
+
+## Payoff function
+"""
+
+def test(df, model, output=False):
+    '''
+    parameters:
+    ---------
+    
+    df: molecules to be tested(in smiles format)
+    model: a trained model for prediction
+    output: whether the result csv would be saved to the directory, default false
+    '''
+    n, e = featurize(df)
+    
+    results = {'smiles': df,
+      
+              'prediction': np.concatenate(model.predict([np.array(q), np.array(p)]))
+            } 
+    df = pd.DataFrame(results)
+    df.sort_values(by='prediction',ascending = False)
+    
+    if output == True:
+        df.to_csv('cool.csv')
+        
+    return df
+
+
+
+
+
+
+
+
+
+
 
