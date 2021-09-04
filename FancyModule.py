@@ -12,7 +12,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 import matplotlib.pyplot as plt
 import numpy as np
-
+import pandas as pd
 import deepchem as dc 
 
 #from rdkit import Chem
@@ -140,7 +140,7 @@ def test(df, model, output=False):
     
     results = {'smiles': df,
       
-              'prediction': np.concatenate(model.predict([np.array(q), np.array(p)]))
+              'prediction': np.concatenate(model.predict([np.array(n), np.array(e)]))
             } 
     df = pd.DataFrame(results)
     df.sort_values(by='prediction',ascending = False)
