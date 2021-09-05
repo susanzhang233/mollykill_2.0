@@ -143,7 +143,7 @@ def test(df, model, output=False):
               'prediction': np.concatenate(model.predict([np.array(n), np.array(e)]))
             } 
     df = pd.DataFrame(results)
-    df.sort_values(by='prediction',ascending = False)
+    df = df.sort_values(by='prediction',ascending = False)
     
     if output == True:
         df.to_csv('cool.csv')
