@@ -29,6 +29,7 @@ The dataset is also hosted in the [data folder](https://github.com/susanzhang233
 ## Limitations(Future work)
 - Currently, the model accuracy is around 86-88%. More attempts with different model structure might be tested for possible improvements.
 - The efficiency of the featurization and training process might be improved.
+- Future wet-lab experiments could be done for confirmation from another aspect.
 
 
 
