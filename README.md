@@ -5,11 +5,11 @@
 This project aims to build a model that would aid novel drug design processes. Somewhat related to [this](https://github.com/susanzhang233/mollykill) mollykill, this project hopes to simplify limitations of the generator and decoder by disregarding the GAN structure. Here, we'll be more focused on employing the accuracy and efficiency of the discriminator. Then, instead of letting the generator to come up with new molecules starting from zero. We'll be applying a larger real world molecule datasets(ie. Zinc15), to mimic the traditional virtual/actual screening process to come up with potential inhibitors.
 
 
-## Main Structure
+## Model Structure
 ![Screen Shot 2021-09-05 at 10 47 40 PM](https://user-images.githubusercontent.com/67823308/132131090-3829f4d7-97d4-43c2-a5c7-fe4c4f95ed19.png)
 
 ## Featurizer
-To represent the molecules in computer understandable format, this project uses the MolGraphConvFeaturizer from deepchem package that could be referred from[here](https://deepchem.readthedocs.io/en/latest/api_reference/featurizers.html#deepchem.feat.MolGraphConvFeaturizer).
+To represent the molecules in computer understandable format, this project uses the MolGraphConvFeaturizer from deepchem package that could be referred from [here](https://deepchem.readthedocs.io/en/latest/api_reference/featurizers.html#deepchem.feat.MolGraphConvFeaturizer).
 This featurizer concatenates each molecule's multiple features into two arrays: nodes array and edges array. Within each of the two arrays, there are then numbers of one-hot encoded arrays corresponding to numbers of atoms in each molecules, i.e. each atom and each bond is represented by one array.
 
 To ensure that the size of the molecule representations are the same(i.e. to standardize input size), this project went one step further to sum up the atom and bond arrays along each column, therefore ending up with node arrays of length 30 and edges array of 11 for each molecule.
@@ -20,7 +20,7 @@ The example dataset used for demonstration of this model is originally from [Pub
 The dataset is also hosted in the [data folder](https://github.com/susanzhang233/mollykill_2.0/blob/main/data) of this project.
 
 
-## Repository Explaination
+## Repository Explanation
 - [`FancyModule.py`](https://github.com/susanzhang233/mollykill_2.0/blob/main/FancyModule.py) contains the major functions of this project
 - [`example.ipynb`](https://github.com/susanzhang233/mollykill_2.0/blob/main/example.ipynb) is an example usage in the model pipeline
 
