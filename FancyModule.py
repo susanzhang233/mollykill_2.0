@@ -37,6 +37,7 @@ def featurize(column):
     
     train_nodes = [ i.node_features.sum(axis = 0) for i in feats ]
     train_edges = [ e.edge_features.sum(axis = 0) for e in feats ]
+    #sum the one-hot features along column so that each representation is of the same length
     
     return train_nodes, train_edges
 
