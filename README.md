@@ -19,7 +19,7 @@ To ensure that the size of the molecule representations are the same(i.e. to sta
 The example dataset used for demonstration of this model is originally from [PubChem AID1706](https://pubchem.ncbi.nlm.nih.gov/bioassay/1706), previously handled by [JClinic AIcure](https://www.aicures.mit.edu/) team at MIT into this [binarized label form](https://github.com/yangkevin2/coronavirus_data/blob/master/data/AID1706_binarized_sars.csv).
 The dataset is also hosted in the [data folder](https://github.com/susanzhang233/mollykill_2.0/blob/main/data) of this project.
 
-The model is also tested with a dataset of screening for inhibitors of MMP9(matrix metalloproteinases), crucial biomarkers associated with periodontal disease. The data was originally assembled [here](https://github.com/FabianHeide/MMP9_drug_discovery/blob/main/data/MMP9_sm_activity.csv)
+The model is also tested with a dataset of screening for inhibitors of MMP9(Matrix Metalloproteinases), crucial biomarkers associated with periodontal disease. The data was originally assembled [here](https://github.com/FabianHeide/MMP9_drug_discovery/blob/main/data/MMP9_sm_activity.csv).
 
 
 ## Repository Explanation
